@@ -19,12 +19,11 @@ else
 fi
 
 
-# run unshorten
+# run index_twt python file
 python /srv/twitter/twt/index_twt.py $1
 
 # make finish-check file
 now=$(date +"%Y%m%d-%H%M%S")
-
 echo "------------"
 echo "> finished at "$now
 echo "============"

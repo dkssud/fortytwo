@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
 
     # make postdata and search : look up data that miss unshorened_url field order by date asc
-    while (result_count > 0 and counter < 50000):
+    while (result_count > 0 and counter < 500000):
 
         # get search_result to process
         search_result = []
@@ -54,13 +54,13 @@ if __name__ == "__main__":
             
             # set script
             script = "del-"+str(field)
-            post_data = json.dumps({"script" : script})
+            post_data = json.dumps({"script": {"file": script, "lang": "groovy"}})
 
             # delete field
             delete_result = {}
             delete_result = elasticq.updateQ(cluster_name, update_index_name, update_type_name, doc_id, post_data)
-            print delete_result
 
+            print delete_result
         #time.sleep(30)
         
     # log

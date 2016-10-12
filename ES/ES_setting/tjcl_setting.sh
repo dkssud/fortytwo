@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ES='http://forty.tw:18181'
-ESIDX='tjcl'
+ES='http://localhost:9200'
+ESIDX='fortytwo'
 
 echo "password?"
 read password
